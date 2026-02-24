@@ -120,14 +120,12 @@ python server.py
 ### First Time
 
 ```bash
-# 1. Upload files to server
-scp -r . user@your-server:/opt/steemit-api/
-
-# 2. SSH into server
+# 1. Clone the repo on your server
 ssh user@your-server
+git clone https://github.com/ismdrobiul489-sudo/steemit-posting.git
+cd steemit-posting
 
-# 3. Create .env
-cd /opt/steemit-api
+# 2. Create .env
 cp .env.example .env
 nano .env   # Set your credentials
 ```
@@ -151,14 +149,14 @@ docker compose restart
 ### Run with Docker (without Compose)
 
 ```bash
-docker build -t steemit-api .
+docker build -t steemit-posting .
 
 docker run -d \
-  --name steemit-api \
+  --name steemit-posting \
   --restart unless-stopped \
   -p 5000:5000 \
   --env-file .env \
-  steemit-api
+  steemit-posting
 ```
 
 ---

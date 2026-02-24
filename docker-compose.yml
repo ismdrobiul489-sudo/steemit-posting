@@ -3,7 +3,7 @@ version: "3.8"
 services:
   steemit-api:
     build: .
-    container_name: steemit-api
+    container_name: steemit-posting
     restart: unless-stopped
     ports:
       - "${PORT:-5000}:5000"
